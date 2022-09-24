@@ -6,7 +6,7 @@ This library help to parse cli argument (inspired from linux cli)
 currently working with utf-8 input, ascii mode for zero-copy parsing is coming soon.
 
 ```
-\'\"\n\r\t\v\061\u1F600\\\\A 'word with space' also\ space
+\'\"\n\r\t\v\x61\u1F600\\\\A 'word with space' also\ space
 ```
 
 will output as

@@ -47,6 +47,10 @@ fn parse_escape_utf<'a>(cli: &mut impl Iterator<Item=char>, buf: &mut Vec<char>)
 					'v', '\x0B',
 					'0', {
 						let hex = String::from_iter(cli.take(2));
+						u8::from_str_radix(&hex, 8)? as char
+					},
+					'x', {
+						let hex = String::from_iter(cli.take(2));
 						u8::from_str_radix(&hex, 16)? as char
 					},
 					'u', {

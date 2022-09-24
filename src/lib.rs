@@ -21,7 +21,7 @@ mod tests {
 	#[test]
 	#[cfg(feature = "utf")]
 	fn test_parse_utf() {
-		let res = parse_arg_utf(r#"\'\"\n\r\t\v\061\u1F600\\\\A 'word with space' also\ space"#);
+		let res = parse_arg_utf(r#"\'\"\n\r\t\v\x61\u1F600\\\\A 'word with space' also\ space"#);
 		assert_eq!(res, vec![String::from("\'\"\n\r\t\x0b\x61😀\\\\A"), String::from("word with space"), String::from("also space")])
 	}
 }
